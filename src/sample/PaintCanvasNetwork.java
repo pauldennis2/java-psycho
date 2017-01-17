@@ -73,7 +73,7 @@ public class PaintCanvasNetwork extends Application {
         } else {
             //connect
             System.out.println("Connecting");
-            try {
+            /*try {
                 InetAddress address = InetAddress.getLocalHost();
                 byte[] bytes = address.getAddress();
                 int index = 0;
@@ -94,7 +94,7 @@ public class PaintCanvasNetwork extends Application {
                 System.out.println(InetAddress.getLocalHost());
             } catch (UnknownHostException ex) {
                 ex.printStackTrace();
-            }
+            }*/
             client = new SimpleClient(ip, SimpleServer.FIRST_PORT_NUM);
             serverListener = new SimpleServer(gc, SimpleServer.SECOND_PORT_NUM, this);
             Thread serverListenerThread = new Thread(serverListener);
