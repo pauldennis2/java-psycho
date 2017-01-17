@@ -2,6 +2,7 @@ package sample;
 
 import javafx.application.Platform;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.Alert;
 import jodd.json.JsonParser;
 import jodd.json.JsonSerializer;
 
@@ -78,7 +79,9 @@ public class ConnectionHandler implements Runnable {
                         System.out.println("Our app is " + app);
                         System.out.println("Our client is: " + app.getClient());
                         System.out.println("Other use wants control of the drawing. Allow? (Y/N)");
-                        Scanner inputScanner = new Scanner(System.in);
+                        Platform.runLater(new RunnableGCAlert(gc, app));
+
+                        /*Scanner inputScanner = new Scanner(System.in);
                         String response = inputScanner.nextLine().toLowerCase();
                         if (response.contains("y")) {
                             System.out.println("Giving control");
@@ -87,7 +90,7 @@ public class ConnectionHandler implements Runnable {
                             System.out.println("No control");
                         } else {
                             System.out.println("You're confused (defaulted to no)");
-                        }
+                        }*/
                     }
                     if (inputLine.startsWith("Accept")) {
                         System.out.println("Other user has given control. Hooray!");

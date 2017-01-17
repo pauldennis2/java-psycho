@@ -33,8 +33,8 @@ public class PaintRecord {
         return record;
     }
 
-    public void writeToFile () {
-        File file = new File(FILE_NAME);
+    public void writeToFile (String fileName) {
+        File file = new File(fileName);
         String jsonString = this.jsonSave();
         try {
             FileWriter fileWriter = new FileWriter(file);
@@ -45,8 +45,8 @@ public class PaintRecord {
         }
     }
 
-    public static PaintRecord readFromFile () {
-        File file = new File(FILE_NAME);
+    public static PaintRecord readFromFile (String fileName) {
+        File file = new File(fileName);
         try {
             Scanner fileScanner = new Scanner(file);
             String jsonFileString = fileScanner.nextLine();
