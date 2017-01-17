@@ -3,6 +3,7 @@ package sample;
 
 import javafx.application.Application;
 import javafx.event.EventHandler;
+import javafx.fxml.Initializable;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
@@ -11,6 +12,10 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 /**
  * Created by Paul Dennis on 1/11/2017.
@@ -24,16 +29,17 @@ public class PaintCanvas extends Application {
     double strokeSize = 2.0;
     boolean drawing = true;
 
+
+
     @Override
     public void start (Stage primaryStage) {
+
         Group rootGroup = new Group();
 
         Canvas canvas = new Canvas(CANVAS_WIDTH, CANVAS_HEIGHT);
         canvas.setFocusTraversable(true);
 
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-
-
 
         canvas.setOnMouseMoved(new EventHandler<MouseEvent>() {
             @Override
