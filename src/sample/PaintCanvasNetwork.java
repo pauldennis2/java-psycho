@@ -22,8 +22,8 @@ import java.util.Scanner;
  */
 public class PaintCanvasNetwork extends Application {
 
-    public static final int CANVAS_WIDTH = 300;
-    public static final int CANVAS_HEIGHT = 200;
+    public static final int CANVAS_WIDTH = 1400;
+    public static final int CANVAS_HEIGHT = 400;
 
     double strokeSize = 2.0;
     boolean drawing = false;
