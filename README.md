@@ -8,7 +8,10 @@ Users can also save a drawing to file through JSON serialization. When loaded, t
 in the sequence it was originally drawn rather than just appearing all at once.
 
 This was one of my earlier network projects. I learned a lot about working with sockets and sending various kinds of
-information through that connection.
+information through that connection. An interesting part of the design process was figuring out a syntax of how to
+communicate this information most efficiently. One efficiency feature to note is that the information about stroke color
+and size is NOT communicated at every stroke (this reduces the size of the message we need to send). That info is only
+communicated when it changes; it's up to the receiver to keep track of it.
 
 Future goals:
 * Add a GUI for the drawing (i.e. have clickable buttons to select color, change stroke size, etc.)
